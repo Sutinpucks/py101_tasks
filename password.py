@@ -8,3 +8,5 @@
 
 if __name__ == '__main__':
     pass
+pw = input('Enter your password: ')
+print( 'Strong' if len(pw) > 8 else 'weak' )
