@@ -16,3 +16,20 @@
 
 if __name__ == '__main__':
     pass
+import random
+u_number = None
+secret_num = random.randrange(0,1000000)
+while u_number != secret_num:
+    u_number = input('Enter your number ')
+    if u_number == '' or u_number == 'exit':
+        break
+    elif u_number.isdigit() == False:
+        print('Not a number')
+    elif int(u_number) not in range(0,1000000):
+        print('Your number is out of range')
+    elif int(u_number) == secret_num:
+        print('Bullseye! You`are right!')
+        break
+    else:
+        print('Secret number is bigger' if int(u_number) < secret_num else 'Secret number is lower')
+    
