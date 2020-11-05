@@ -1,3 +1,7 @@
+import sys
+import argparse 
+from nltk.corpus import stopwords
+
 """
 Программа считает Топ-100 слов для переданного ей текстого файла.
 

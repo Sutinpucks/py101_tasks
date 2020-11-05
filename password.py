@@ -8,5 +8,9 @@
 
 if __name__ == '__main__':
     pass
+import re
 pw = input('Enter your password: ')
-print( 'Strong' if len(pw) > 8 else 'weak' )
+if len(pw) >= 8 and re.search(r'[A-Za-z]', pw) and  re.search(r'[0-9]', pw):
+    print('strong')
+else:
+    print('weak')
