@@ -21,8 +21,9 @@ from nltk.corpus import stopwords
 #Create an empty dictionary for words occurancies
 d = dict() 
 def remove_stopwords(textfile):
-#function exclude stopwords
-    filtered_text = [word for word in textfile if word not in stopwords.words('english')]
+#function open file and exclude stopwords
+    with open(file_name, "r", encoding="UTF-8") as textfile:
+        filtered_text = [word for word in textfile if word not in stopwords.words('english')]
 
 def clean_words(filtered_text)
 #Remove the leading and newline character
