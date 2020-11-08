@@ -23,20 +23,22 @@ from nltk.corpus import stopwords
 d = dict() 
 file_name = input('Enter path to the file ')
 def remove_stopwords(textfile):
+
 #function open file and exclude stopwords
     with open(file_name, "r", encoding="UTF-8") as textfile:
-        filtered_text = [word for word in textfile if word not in stopwords.words('english')]
+    #Remove the leading and newline character
+    #Convert to lowercase
+    #Split lines into words
+        for line in textfile:
+            line = line.strip()
+            line = line.lower()
+            words = line.split(' ')
+        filtered_text = [word for word in words if word not in stopwords.words('english')]
+    return filtered_text
 
 def clean_words(filtered_text):
-#Remove the leading and newline character
-#Convert to lowercase
-#Split lines into words
-    for line in filtered_text:
-        line = line.strip()
-        line = line.lower()
-        words = line.split(' ')
 #check if word is in dictionary. Add count if it is in, add word with count 1 if it is new
-    for word in words:
+    for word in filtered_text:
         if word in d:
             d[word] = d[word] + 1
         else:
@@ -44,7 +46,7 @@ def clean_words(filtered_text):
 def top100(clean_words):
 #Sort dictionary 
     sorted_dict = sorted(clean_words.items(), key=lambda x: x[1])
-#Sort dictionary
+#print to 100 words
     top100 = collections.Counter(sorted_dict).most_common(100)
     print(top100)
 
