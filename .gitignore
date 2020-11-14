@@ -1,0 +1,8 @@
+.env
+app.log
+send_sms.env
+send_sms.py
+smss.py
+spam.py
+twilio.env.txt
+__pycache__/send_sms.cpython-39.pyc
