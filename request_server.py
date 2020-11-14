@@ -9,7 +9,7 @@ load_dotenv()
 
 logging.basicConfig(level=logging.INFO, filename='app.log', filemode='w', format="%(levelname)s %(asctime)s %(message)s")
 
-URL = os.getenv('SITE')
+URL = os.getenv('SERVER')
 TWILIO_ACCOUNT_SID = os.getenv('TWILIO_ACCOUNT_SID')
 TWILIO_AUTH_TOKEN = os.getenv('TWILIO_AUTH_TOKEN')
 FROM_NUMBER = os.getenv('FROM_NUMBER')
